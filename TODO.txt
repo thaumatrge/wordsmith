@@ -1,4 +1,4 @@
-- Phonetics	Mirror real life language for now
+- Phonetics	Mirror a real life language for now
 - Lexicon	Go through all basic words in English	can tick if verb if verb then choose class
 - Pronouns
 - Sentence structure	VSO/OSV/SOV etc.
