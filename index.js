@@ -35,6 +35,7 @@ function pr() {
     var input = document.createElement("INPUT");
     var br = document.createElement("BR");
     input.type = "text";
+    input.id = String(get_unnused(pronouns));
     para.style = "display: inline-block";
     input.style = "display: inline-block; border-top: none; border-left: none; border-right: none; font-family: 'IM FELL DW Pica'; border-radius: 0px; letter-spacing: 1px; font-size: 15px; position: relative; left: 1%";
     input.innerHtml = "";
@@ -45,5 +46,18 @@ function pr() {
 }
 
 function pr_submit() {
-    
+    for (i = 0; i < pronouns.length; i++) {
+        alert(i)
+        var el = document.getElementById(i).value;
+        pronouns[i][1] = String(el);
+    }
+    alert(pronouns);
+}
+
+function get_unnused(arr) {
+    for (i = 0; i > 0; i++) {
+        if (arr[i][0] == undefined) {
+            return i;
+        }
+    }
 }
