@@ -5,20 +5,24 @@
     <meta charset="UTF-8">
     <title>Wordsmith</title>
     <script src="index.js"></script>
+    <link rel="stylesheet" href="style.css">
     <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
 </head>
 
 <body style="background: white;">
-    <form></form>
-        <label for="phonetics">Phonetics</label>
+    <form>
+        <h1 style="top: 10%">Phonetics</h1>
         <select name="phonetics" id="phonetics">
+            <option value="n/a">Click me to select language to take phonetics from.</option>
             <option value="ol">Old Norse</option>
             <option value="en">English</option>
             <option value="sp">Spanish</option>
             <option value="fr">French</option>
         </select>
         <br><br>
-        <a href="" id="ph">Next</a>
+        <div class="bob-on-hover">
+            <a onclick="ph()">&#9758;</a>
+        </div>
     </form>
 </body>
 
