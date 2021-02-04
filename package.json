@@ -1,0 +1,10 @@
+{
+  "name": "wordsmith",
+  "version": "0.1.0",
+  "author": "thaumaturge",
+  "description": "Tool for generating a conlang",
+  "main": "main.js",
+  "scripts": {
+      "start": "electron ."
+  }
+}

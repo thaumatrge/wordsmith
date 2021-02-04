@@ -1,0 +1,18 @@
+- Phonetics	Mirror real life language for now
+- Lexicon	Go through all basic words in English	can tick if verb if verb then choose class
+- Pronouns
+- Sentence structure	VSO/OSV/SOV etc.
+- Conjugation	flip between no conjugation / add new classes of verbs and add conjugations for each pronoun
+- History of people speaking language	Short text prompt
+- Adjective	before/after
+- Prepositions / Postpositions
+
+ORDER & TECHNICAL DETAILS:
+
+History
+Phonetics
+Pronouns	Add to pronouns array
+Conjugation
+Adjective	Boolean		True = Before / False = After
+Pre/Postpositions	Boolean		True = Pre / False = Post
+Sentence Structure	3 char limit	Check if has V, S and O then save to string
