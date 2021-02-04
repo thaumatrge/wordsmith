@@ -8,8 +8,7 @@ let pre_post_postions = false;
 let sentence_structure = false;
 
 function ph() {
-    var ph = document.getElementById('phonetics');
-    var ph_val = ph.value;
+    var ph_val = document.getElementById('phonetics').value;
     if (ph_val == 'ol') {
         phonetics_v = ['i', 'ĩ', 'iː', 'ĩː', 'y', 'ỹ', 'yː', 'ỹː', '', '', 'u', 'ũ', 'uː', 'ũː', '\n','e', 'ẽ', 'eː', 'ẽː', 'ø', 'ø̃ ', 'øː', 'ø̃ː', '', '', 'o', 'õ', 'oː', 'õː', '\n', 'ɛ', 'ɛ̃', 'ɛː', 'ɛ̃ː', 'œ', 'œ̃', '', 'a', 'ã', 'aː', 'ãː', 'ɔ', 'ɔ̃', 'ɔː', 'ɔ̃ː'];
         phonetics_c = ['i','iː','y','yː',',','u','uː','\n','e','eː','ø','øː','','','o','oː','\n','ɛ','ɛː','','','a','aː','',''];
@@ -30,8 +29,21 @@ function ph() {
 }
 
 function pr() {
-    alert('big man');
-    var pr = document.getElementById('pronouns');
-    var pr_val = pr.value();
-    alert('large man');
+    var pr_val = document.getElementById('pronouns').value;
+    pronouns.push([pr_val]);
+    var para = document.createElement("P");
+    var input = document.createElement("INPUT");
+    var br = document.createElement("BR");
+    input.type = "text";
+    para.style = "display: inline-block";
+    input.style = "display: inline-block; border-top: none; border-left: none; border-right: none; font-family: 'IM FELL DW Pica'; border-radius: 0px; letter-spacing: 1px; font-size: 15px; position: relative; left: 1%";
+    input.innerHtml = "";
+    para.innerHTML = pr_val + ' ';
+    document.getElementById("main").appendChild(para);
+    document.getElementById("main").appendChild(input);
+    document.getElementById("main").appendChild(br);
+}
+
+function pr_submit() {
+    
 }
