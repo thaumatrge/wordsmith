@@ -1,4 +1,4 @@
-- Phonetics	Mirror a real life language for now
+- Phonetics	Mirror a real life language
 - Lexicon	Go through all basic words in English	can tick if verb if verb then choose class
 - Pronouns
 - Sentence structure	VSO/OSV/SOV etc.
@@ -7,9 +7,8 @@
 - Adjective	before/after
 - Prepositions / Postpositions
 
-ORDER & TECHNICAL DETAILS:
+ORDER & TECHNICAL DETAILS & TODO:
 
-Phonetics
 Pronouns	Add to pronouns array
 Conjugation
 Adjective	Boolean		True = Before / False = After
