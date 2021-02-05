@@ -15,3 +15,6 @@ Adjective	Boolean		True = Before / False = After
 Pre/Postpositions	Boolean		True = Pre / False = Post
 Sentence Structure	3 char limit	Check if has V, S and O then save to string
 History
+
+I know this is structured poorly
+Why are you reading this
