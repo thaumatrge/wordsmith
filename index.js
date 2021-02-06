@@ -29,49 +29,49 @@ function ph() {
 }
 
 function pr() {
-    var pr_val = document.getElementById('pronouns').value;
+    var pr_val = document.getElementById('pr_input').value;
 
-    document.getElementById('pronouns').value = "";
+    document.getElementById('pr_input').value = "";
 
     var para = document.createElement("P");
     var input = document.createElement("INPUT");
     var br = document.createElement("BR");
+    var placehold = "ph";
 
-    pronouns.push([pr_val,""]);
-    sessionStorage.setItem('pronouns', pronouns)
+    pronouns.push([pr_val,placehold]);
 
-    alert(get_unnused(pronouns))
     input.type = "text";
-    input.id = get_unnused(pronouns);
+    var id = get_unnused(pronouns);
+    input.id = id;
 
     para.style = "display: inline-block";
     input.style = "display: inline-block; border-top: none; border-left: none; border-right: none; font-family: 'IM FELL DW Pica'; border-radius: 0px; letter-spacing: 1px; font-size: 15px; position: relative; left: 1%";
 
-    input.innerHtml = "";
-    para.innerHTML = pr_val + ' ';
+    input.innerHtml = '';
+    para.innerHTML = pr_val;
 
     document.getElementById("main").appendChild(para);
     document.getElementById("main").appendChild(input);
     document.getElementById("main").appendChild(br);
+
+    sessionStorage.setItem('pronouns', pronouns);
 }
 
 function pr_submit() {
-    var pronouns = sessionStorage.getItem('pronouns');
-    alert(pronouns);
-
-    for (var i = 0; i < pronouns.length; i++) {
-        alert(i);
-        var el = document.getElementById(i);
-        alert(el.value);
-        //var el_val = el.value;
-        //pronouns[i][1] = el_val;
+    var pr = sessionStorage.getItem('pronouns');
+    for (var i = 1; i < pr.length; i++) {
+        var el = document.getElementById(i).value;
+        alert(el);
+        pr[i][1] = el;
+        alert(pr);
+        sessionStorage.setItem('pronouns', pr);
     }
 }
 
 function get_unnused(arr) {
-    for (i = 0; i > Infinity; i++) {
-        if (typeof array[i] !== 'undefined') {
-            return i;
+    for (i = 0; i < Infinity; i++) {
+        if (arr[i] === undefined) {
+            return(i)
         }
     }
 }
