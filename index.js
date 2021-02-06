@@ -40,8 +40,9 @@ function pr() {
     pronouns.push([pr_val,""]);
     sessionStorage.setItem('pronouns', pronouns)
 
+    alert(get_unnused(pronouns))
     input.type = "text";
-    input.id = String(get_unnused(pronouns));
+    input.id = get_unnused(pronouns);
 
     para.style = "display: inline-block";
     input.style = "display: inline-block; border-top: none; border-left: none; border-right: none; font-family: 'IM FELL DW Pica'; border-radius: 0px; letter-spacing: 1px; font-size: 15px; position: relative; left: 1%";
@@ -55,19 +56,21 @@ function pr() {
 }
 
 function pr_submit() {
-    pronouns = sessionStorage.getItem('pronouns').split(",")
-
-    for (i = 0; i < pronouns.length; i++) {
-        alert(i);
-        var el = document.getElementById(i).value;
-        pronouns[i][1] = String(el);
-    }
+    var pronouns = sessionStorage.getItem('pronouns');
     alert(pronouns);
+
+    for (var i = 0; i < pronouns.length; i++) {
+        alert(i);
+        var el = document.getElementById(i);
+        alert(el.value);
+        //var el_val = el.value;
+        //pronouns[i][1] = el_val;
+    }
 }
 
 function get_unnused(arr) {
-    for (i = 0; i > 0; i++) {
-        if (arr[i][0] == undefined) {
+    for (i = 0; i > Infinity; i++) {
+        if (typeof array[i] !== 'undefined') {
             return i;
         }
     }
