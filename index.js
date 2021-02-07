@@ -6,6 +6,16 @@ var adjectives = false;
 var pre_post_postions = false;
 var sentence_structure = false;
 
+const combine = (one, two) => one.map((a,i)=>[a,two[i]]).join(",");
+
+function get_unnused(arr) {
+    for (i = 0; i < Infinity; i++) {
+        if (arr[i] === undefined) {
+            return(i)
+        }
+    }
+}
+
 function ph() {
     var ph_val = document.getElementById('phonetics').value;
 
@@ -61,19 +71,9 @@ function pr_submit() {
         id = "arr_"+i;
         el = document.getElementById(id).value;
         t_pronouns.push(el);
-
         sessionStorage.setItem('t_pronouns', t_pronouns);
     }
-}
-
-function get_unnused(arr) {
-    for (i = 0; i < Infinity; i++) {
-        if (arr[i] === undefined) {
-            return(i)
-        }
-    }
-}
-
-function combine(a1, a2) {
-    
+    alert(pr);
+    alert(sessionStorage.getItem('t_pronouns'));
+    combine(a1,a2);
 }
