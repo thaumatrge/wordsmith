@@ -1,4 +1,5 @@
 var pronouns = [];
+var t_pronouns = [];
 var history = '';
 var conjugation = false;
 var adjectives = false;
@@ -30,24 +31,21 @@ function ph() {
 
 function pr() {
     var pr_val = document.getElementById('pr_input').value;
-
     document.getElementById('pr_input').value = "";
 
     var para = document.createElement("P");
     var input = document.createElement("INPUT");
     var br = document.createElement("BR");
-    var placehold = "ph";
 
-    pronouns.push([pr_val,placehold]);
+    pronouns.push(pr_val);
+    var id = "arr_" + get_unnused(pronouns);
 
     input.type = "text";
-    var id = get_unnused(pronouns);
     input.id = id;
 
     para.style = "display: inline-block";
     input.style = "display: inline-block; border-top: none; border-left: none; border-right: none; font-family: 'IM FELL DW Pica'; border-radius: 0px; letter-spacing: 1px; font-size: 15px; position: relative; left: 1%";
 
-    input.innerHtml = '';
     para.innerHTML = pr_val;
 
     document.getElementById("main").appendChild(para);
@@ -58,13 +56,13 @@ function pr() {
 }
 
 function pr_submit() {
-    var pr = sessionStorage.getItem('pronouns');
-    for (var i = 1; i < pr.length; i++) {
-        var el = document.getElementById(i).value;
-        alert(el);
-        pr[i][1] = el;
-        alert(pr);
-        sessionStorage.setItem('pronouns', pr);
+    pr = sessionStorage.getItem('pronouns');
+    for (var i = 1; i < pr.length+1; i++) {
+        id = "arr_"+i;
+        el = document.getElementById(id).value;
+        t_pronouns.push(el);
+
+        sessionStorage.setItem('t_pronouns', t_pronouns);
     }
 }
 
@@ -74,4 +72,8 @@ function get_unnused(arr) {
             return(i)
         }
     }
+}
+
+function combine(a1, a2) {
+    
 }
