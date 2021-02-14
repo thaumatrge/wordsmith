@@ -135,7 +135,7 @@ function con_submit() {
             var id = "arr_"+i;
             var el = document.getElementById(id).value;
             t_conjugations.push(el);
-            sessionStorage.setItem('t_conjugations', tco);
+            sessionStorage.setItem('t_conjugations', t_conjugations);
             alert(t_conjugations);
         }
     }
