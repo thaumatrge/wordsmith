@@ -8,5 +8,4 @@ Customise:
 - Conjugation
 - History
 - Adjectives
-- Prepositions
-- And more
+- Pre/Postpositions

@@ -77,11 +77,12 @@ function pr_submit() {
         t_pronouns.push(el);
         sessionStorage.setItem('t_pronouns', t_pronouns);
     }
+    sessionStorage.setItem('t_pronouns', t_pronouns);
     window.location.href = "conjugation.html";
 }
 
 function con() {
-    pronouns = sessionStorage.getItem('pronouns');
+    var pronouns = sessionStorage.getItem('pronouns');
     pronouns = pronouns.split(",");
 
     conjugation = true;
@@ -108,7 +109,7 @@ function con() {
 
         input.style = "display: inline-block; border-top: none; border-left: none; border-right: none; font-family: 'IM FELL DW Pica'; border-radius: 0px; letter-spacing: 1px; font-size: 15px; position: relative; left: 1%";
         para.style = "display: inline-block";
-        para.innerHTML = pronouns[i]+;
+        para.innerHTML = pronouns[i];
 
         var id = "arr_" + get_unnused(conjugation_groups);
 
@@ -127,12 +128,15 @@ function con_submit() {
     var pro = sessionStorage.getItem('pronouns');
     pro = pro.split(",");
     con = con.split(",");
+    alert(con);
+    alert(pro);
     for (var i = 1; i < con.length; i++) {
         for (var i = 1; i < pro.length; i++) {
             var id = "arr_"+i;
             var el = document.getElementById(id).value;
             t_conjugations.push(el);
-            sessionStorage.setItem('t_conjugations', t_conjugations);
+            sessionStorage.setItem('t_conjugations', tco);
+            alert(t_conjugations);
         }
     }
 }
