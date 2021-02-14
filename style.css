@@ -13,6 +13,7 @@ form {
     font-family: 'Crimson Text';
     border-radius: 2px;
     border: 0.01px solid #272727;
+    text-align: center;
 }select {
     font-family: 'Crimson Text';
     border: none;

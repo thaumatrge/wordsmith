@@ -6,7 +6,7 @@ var adjectives = false;
 var pre_post_postions = false;
 var sentence_structure = false;
 
-const combine = (one, two) => one.map((a,i)=>[a,two[i]]).join(",");
+const combine = (one, two) => one.map((a,i)=>[a,two[i]]).join(',');
 
 function get_unnused(arr) {
     for (i = 0; i < Infinity; i++) {
@@ -66,14 +66,12 @@ function pr() {
 }
 
 function pr_submit() {
-    pr = sessionStorage.getItem('pronouns');
-    for (var i = 1; i < pr.length+1; i++) {
-        id = "arr_"+i;
-        el = document.getElementById(id).value;
+    var pr = sessionStorage.getItem('pronouns');
+    for (var i = 1; i < pr.length; i++) {
+        var id = "arr_"+i;
+        var el = document.getElementById(id).value;
         t_pronouns.push(el);
         sessionStorage.setItem('t_pronouns', t_pronouns);
     }
-    alert(pr);
-    alert(sessionStorage.getItem('t_pronouns'));
-    combine(a1,a2);
+    window.location.href = "pronouns.html";
 }
