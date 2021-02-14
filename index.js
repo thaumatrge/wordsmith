@@ -7,8 +7,6 @@ var adjectives = false;
 var pre_post_postions = false;
 var sentence_structure = false;
 
-const combine = (one, two) => one.map((a,i)=>[a,two[i]]).join(',');
-
 function get_unnused(arr) {
     for (i = 0; i < Infinity; i++) {
         if (arr[i] === undefined) {
@@ -79,7 +77,8 @@ function pr_submit() {
 
 function con() {
     pronouns = sessionStorage.getItem('pronouns');
-    
+    pronouns = pronouns.split(",");
+
     conjugation = true;
     var con_val = document.getElementById('con_input').value;
     document.getElementById('con_input').value = "";
@@ -95,14 +94,23 @@ function con() {
 
     input.type = "text";
     input.id = id;
-
-    para.style = "display: inline-block";
-    input.style = "display: inline-block; border-top: none; border-left: none; border-right: none; font-family: 'IM FELL DW Pica'; border-radius: 0px; letter-spacing: 1px; font-size: 15px; position: relative; left: 1%";
     t.style="font-family: 'IM FELL DW Pica'; letter-spacing: 1px; font-size: 18px; text-align: center";
 
     t.innerHTML = con_val;
 
+    document.getElementById("main").appendChild(t);
+
     for (var i = 0; i < pronouns.length; i++) {
-        para.innerHTML = get_unnused(conjugation_groups);
+        var para = document.createElement("P");
+        var br = document.createElement("BR");
+        var input = document.createElement("INPUT");
+
+        input.style = "display: inline-block; border-top: none; border-left: none; border-right: none; font-family: 'IM FELL DW Pica'; border-radius: 0px; letter-spacing: 1px; font-size: 15px; position: relative; left: 1%";
+        para.style = "display: inline-block";
+        para.innerHTML = pronouns[i];
+
+        document.getElementById("main").appendChild(para);
+        document.getElementById("main").appendChild(input);
+        document.getElementById("main").appendChild(br);
     }
 }
