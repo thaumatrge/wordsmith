@@ -2,6 +2,7 @@ var pronouns = [];
 var t_pronouns = [];
 var history = '';
 var conjugation = false;
+var conjugation_groups = [];
 var adjectives = false;
 var pre_post_postions = false;
 var sentence_structure = false;
@@ -73,5 +74,35 @@ function pr_submit() {
         t_pronouns.push(el);
         sessionStorage.setItem('t_pronouns', t_pronouns);
     }
-    window.location.href = "pronouns.html";
+    window.location.href = "conjugation.html";
+}
+
+function con() {
+    pronouns = sessionStorage.getItem('pronouns');
+    
+    conjugation = true;
+    var con_val = document.getElementById('con_input').value;
+    document.getElementById('con_input').value = "";
+
+    var para = document.createElement("P");
+    var input = document.createElement("INPUT");
+    var br = document.createElement("BR");
+    var t = document.createElement("P");
+
+    conjugation_groups.push(con_val);
+
+    var id = "arr_" + get_unnused(conjugation_groups);
+
+    input.type = "text";
+    input.id = id;
+
+    para.style = "display: inline-block";
+    input.style = "display: inline-block; border-top: none; border-left: none; border-right: none; font-family: 'IM FELL DW Pica'; border-radius: 0px; letter-spacing: 1px; font-size: 15px; position: relative; left: 1%";
+    t.style="font-family: 'IM FELL DW Pica'; letter-spacing: 1px; font-size: 18px; text-align: center";
+
+    t.innerHTML = con_val;
+
+    for (var i = 0; i < pronouns.length; i++) {
+        para.innerHTML = get_unnused(conjugation_groups);
+    }
 }
