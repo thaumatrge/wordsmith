@@ -1,8 +1,12 @@
 var pronouns = [];
 var t_pronouns = [];
+
 var history = '';
+
 var conjugation = false;
 var conjugation_groups = [];
+var t_conjugations = []
+
 var adjectives = false;
 var pre_post_postions = false;
 var sentence_structure = false;
@@ -66,6 +70,7 @@ function pr() {
 
 function pr_submit() {
     var pr = sessionStorage.getItem('pronouns');
+    pr = pr.split(",");
     for (var i = 1; i < pr.length; i++) {
         var id = "arr_"+i;
         var el = document.getElementById(id).value;
@@ -90,10 +95,6 @@ function con() {
 
     conjugation_groups.push(con_val);
 
-    var id = "arr_" + get_unnused(conjugation_groups);
-
-    input.type = "text";
-    input.id = id;
     t.style="font-family: 'IM FELL DW Pica'; letter-spacing: 1px; font-size: 18px; text-align: center";
 
     t.innerHTML = con_val;
@@ -107,10 +108,31 @@ function con() {
 
         input.style = "display: inline-block; border-top: none; border-left: none; border-right: none; font-family: 'IM FELL DW Pica'; border-radius: 0px; letter-spacing: 1px; font-size: 15px; position: relative; left: 1%";
         para.style = "display: inline-block";
-        para.innerHTML = pronouns[i];
+        para.innerHTML = pronouns[i]+;
+
+        var id = "arr_" + get_unnused(conjugation_groups);
+
+        input.type = "text";
+        input.id = id;
 
         document.getElementById("main").appendChild(para);
         document.getElementById("main").appendChild(input);
         document.getElementById("main").appendChild(br);
+    }
+    sessionStorage.setItem('conjugation_groups', conjugation_groups);
+}
+
+function con_submit() {
+    var con = sessionStorage.getItem('conjugation_groups');
+    var pro = sessionStorage.getItem('pronouns');
+    pro = pro.split(",");
+    con = con.split(",");
+    for (var i = 1; i < con.length; i++) {
+        for (var i = 1; i < pro.length; i++) {
+            var id = "arr_"+i;
+            var el = document.getElementById(id).value;
+            t_conjugations.push(el);
+            sessionStorage.setItem('t_conjugations', t_conjugations);
+        }
     }
 }
