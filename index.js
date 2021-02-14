@@ -128,11 +128,12 @@ function con_submit() {
     var pro = sessionStorage.getItem('pronouns');
     pro = pro.split(",");
     con = con.split(",");
-    alert(con);
-    alert(pro);
-    for (var i = 1; i < con.length; i++) {
-        for (var i = 1; i < pro.length; i++) {
-            var id = "arr_"+i;
+    for (var i = 0; i < con.length; i++) {
+        alert('first loop');
+        for (var j = 1; j < pro.length; j++) {
+            alert('second loop')
+            var id = "arr_"+j;
+            alert(id)
             var el = document.getElementById(id).value;
             t_conjugations.push(el);
             sessionStorage.setItem('t_conjugations', t_conjugations);
