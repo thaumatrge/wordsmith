@@ -129,9 +129,7 @@ function con_submit() {
     pro = pro.split(",");
     con = con.split(",");
     for (var i = 0; i < con.length; i++) {
-        alert('first loop');
         for (var j = 0; j < pro.length; j++) {
-            alert('second loop')
             var id = "arr_"+j;
             var el = document.getElementById(id).value;
             t_conjugations.push(el);
@@ -139,4 +137,10 @@ function con_submit() {
         }
     }
     window.location.href = "sentence.html";
+}
+
+function sen() {
+}
+
+function sen_submit() {
 }
