@@ -111,7 +111,7 @@ function con() {
         para.style = "display: inline-block";
         para.innerHTML = pronouns[i];
 
-        var id = "arr_" + get_unnused(conjugation_groups);
+        var id = "arr_" + i;
 
         input.type = "text";
         input.id = id;
@@ -130,14 +130,12 @@ function con_submit() {
     con = con.split(",");
     for (var i = 0; i < con.length; i++) {
         alert('first loop');
-        for (var j = 1; j < pro.length; j++) {
+        for (var j = 0; j < pro.length; j++) {
             alert('second loop')
             var id = "arr_"+j;
-            alert(id)
             var el = document.getElementById(id).value;
             t_conjugations.push(el);
             sessionStorage.setItem('t_conjugations', t_conjugations);
-            alert(t_conjugations);
         }
     }
 }
