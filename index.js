@@ -138,4 +138,5 @@ function con_submit() {
             sessionStorage.setItem('t_conjugations', t_conjugations);
         }
     }
+    window.location.href = "sentence.html";
 }
