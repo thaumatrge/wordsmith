@@ -140,6 +140,9 @@ function con_submit() {
 }
 
 function sen() {
+    var adj = document.getElementById('adj').checked;
+    var pos = document.getElementById('pos').checked;
+    console.log(pos)
 }
 
 function sen_submit() {
