@@ -142,7 +142,8 @@ function con_submit() {
 function sen() {
     var adj = document.getElementById('adj').checked;
     var pos = document.getElementById('pos').checked;
-    console.log(pos)
+    console.log(pos)    
+	// "True" actually means that the switch is turned off
 }
 
 function sen_submit() {
