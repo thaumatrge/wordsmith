@@ -139,12 +139,34 @@ function con_submit() {
     window.location.href = "sentence.html";
 }
 
-function sen() {
-    var adj = document.getElementById('adj').checked;
-    var pos = document.getElementById('pos').checked;
-    console.log(pos)    
-	// "True" actually means that the switch is turned off
-}
-
 function sen_submit() {
+	var sen = document.getElementById().value;	
+
+	var lockone = false;
+	var locktwo = false;
+	var locktwo1 = false;
+	var locktwo2 = false;
+	var locktwo3 = false;
+
+	var valid = false;
+
+	senarr = sen.split('')
+	if (senarr.length === 3) {
+		lockone = true;
+	}
+	for (var i = 0; i > senarr.length; i++) {
+		if (senarr[i] == 'V') {
+			locktwo1 = true;
+		}else if (senarr[i] == 'S') {
+			locktwo2 = true;
+		}else if (senarr[i] == 'O') {
+			locktwo3 = true;
+		}
+	}
+	if (locktwo1 == true && locktwo2 == true && locktwo3 == true) {
+		locktwo = true;
+	}
+	if (lockone == true && locktwo == true) {
+		
+	}
 }
