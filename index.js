@@ -170,6 +170,12 @@ function sen_submit() {
 	// Adjectives
 	var adjectives = false;
 	var adj = document.getElementById('adj').checked;
-	// true means that it is turned off
 	alert(adj);
+	sessionStorage.setItem('adjectives', adjectives);
+	//Pre/Postpositions
+	var pre_postpositions = false;
+	var prepost = document.getElementById('pos').checked;
+	alert(prepost);
+	sessionStorage.setItem('prepostpositions', pre_postpositions);
+	window.location.href = ""
 }
