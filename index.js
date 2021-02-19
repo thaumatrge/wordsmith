@@ -5,6 +5,17 @@ var conjugation = false;
 var conjugation_groups = [];
 var t_conjugations = []
 
+if (localStorage.getItem('darkmode') == true) {
+	dark();
+}
+
+function dark() {
+	var element = document.getElementById('document');
+	element.classList.toggle("dark");
+	darkmode = !darkmode;
+	localStorage.setItem('darkmode', darkmode)
+}
+
 function get_unnused(arr) {
     for (i = 0; i < Infinity; i++) {
         if (arr[i] === undefined) {

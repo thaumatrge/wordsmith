@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Text&family=IM+Fell+DW+Pica&display=swap');
 
 * {
+    transition: color 0.2s;
     outline: none !important;
-}body {
-    text-align: center;
+    background-size: cover;
+}html {
+	text-align: center;
 }
 
 form {
@@ -72,6 +74,23 @@ h1 {
     background-color: #ccc;
     -webkit-transition: .2s;
     transition: .2s;
+}
+
+.dark,
+.dark * {
+    background-color: #222;
+    color: #e6e6e6;
+}
+
+i {
+	position: absolute;
+	top: 3%;
+	right: 2.5%;
+	font-size: 25px;
+}
+
+i:hover {
+	cursor: pointer;
 }
 
 .slider:before {
