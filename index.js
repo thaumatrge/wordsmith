@@ -169,5 +169,7 @@ function sen_submit() {
 	}
 	// Adjectives
 	var adjectives = false;
-	var adj = document.getElementById('adj');
+	var adj = document.getElementById('adj').checked;
+	// true means that it is turned off
+	alert(adj);
 }
