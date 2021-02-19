@@ -1,15 +1,9 @@
 var pronouns = [];
 var t_pronouns = [];
 
-var history = '';
-
 var conjugation = false;
 var conjugation_groups = [];
 var t_conjugations = []
-
-var adjectives = false;
-var pre_post_postions = false;
-var sentence_structure = false;
 
 function get_unnused(arr) {
     for (i = 0; i < Infinity; i++) {
@@ -140,21 +134,20 @@ function con_submit() {
 }
 
 function sen_submit() {
-	var sen = document.getElementById().value;	
-
+	// Sentence structure
+	var sen = document.getElementById("sen").value;	
 	var lockone = false;
 	var locktwo = false;
 	var locktwo1 = false;
 	var locktwo2 = false;
 	var locktwo3 = false;
-
 	var valid = false;
-
 	senarr = sen.split('')
-	if (senarr.length === 3) {
+	senlen = senarr.length;
+	if (senarr.length == 3) {
 		lockone = true;
 	}
-	for (var i = 0; i > senarr.length; i++) {
+	for (var i = 0; i < senarr.length; i++) {
 		if (senarr[i] == 'V') {
 			locktwo1 = true;
 		}else if (senarr[i] == 'S') {
@@ -167,6 +160,14 @@ function sen_submit() {
 		locktwo = true;
 	}
 	if (lockone == true && locktwo == true) {
-		
+		valid = true;	
 	}
+	if (valid == true) {
+		sessionStorage.setItem('sentence_structure', sen);
+	}else {
+		alert('A valid sentence structure has to be three characters long and include the letters S, V and O.')
+	}
+	// Adjectives
+	var adjectives = false;
+	var adj = document.getElementById('adj');
 }
