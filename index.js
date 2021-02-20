@@ -6,7 +6,9 @@ var t_pronouns = [];
 
 var conjugation = false;
 var conjugation_groups = [];
-var t_conjugations = []
+var t_conjugations = [];
+
+var adjective_groups = [];
 
 if (darkmode == true) {
 	document.getElementById('document').classList.add("dark");
@@ -189,5 +191,23 @@ function sen_submit() {
 	//Pre/Postpositions
 	var prepost = document.getElementById('pos').checked;
 	sessionStorage.setItem('prepost', prepost);
-	window.location.href = "lexicon.html"
+	window.location.href = "adjectives.html"
+}
+
+function adj() {
+	var adj_val = document.getElementById('adj_input').value;
+	document.getElementById('adj_input').value = "";
+
+	var para = document.createElement("P");
+	var input = document.createElement("INPUT");
+	var br = document.createElement("BR");
+	input.style = "display: inline-block; border-top: none; border-left: none; border-right: none; font-family: 'IM FELL DW Pica'; border-radius: 0px; letter-spacing: 1px; font-size: 15px; position: relative; left: 1%";
+        para.style = "display: inline-block";
+	adjective_groups.push(con_val);
+	
+	document.getElementById('main').appendChild(para);
+	document.getElementById('main').appendChild(input);
+	document.getElementById('main').appendChild(br);
+
+	sessionStorage.setItem('adjective_groups', adjective_groups);
 }
