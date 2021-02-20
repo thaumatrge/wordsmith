@@ -80,9 +80,11 @@ h1 {
 .dark * {
     background-color: #222;
     color: #e6e6e6;
+    border-color: #e6e6e6;
 }
 
 i {
+	z-index: 10;
 	position: absolute;
 	top: 3%;
 	right: 2.5%;

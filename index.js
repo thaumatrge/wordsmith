@@ -1,3 +1,6 @@
+var darkmode = Boolean(sessionStorage.getItem('darkmode'));
+console.log(darkmode)
+
 var pronouns = [];
 var t_pronouns = [];
 
@@ -5,15 +8,17 @@ var conjugation = false;
 var conjugation_groups = [];
 var t_conjugations = []
 
-if (localStorage.getItem('darkmode') == true) {
-	dark();
+if (darkmode == true) {
+	document.getElementById('document').classList.add("dark");
+}else if (darkmode == false){
+	document.getElementById('document').classList.remove("dark");
 }
 
 function dark() {
 	var element = document.getElementById('document');
 	element.classList.toggle("dark");
-	darkmode = !darkmode;
-	localStorage.setItem('darkmode', darkmode)
+	let darkmode = true // here you need to explicitly declare the variable       
+	sessionStorage.setItem('darkmode', JSON.stringify(darkmode));
 }
 
 function get_unnused(arr) {
@@ -179,14 +184,10 @@ function sen_submit() {
 		alert('A valid sentence structure has to be three characters long and include the letters S, V and O.')
 	}
 	// Adjectives
-	var adjectives = false;
 	var adj = document.getElementById('adj').checked;
-	alert(adj);
-	sessionStorage.setItem('adjectives', adjectives);
+	sessionStorage.setItem('adj', adj);
 	//Pre/Postpositions
-	var pre_postpositions = false;
 	var prepost = document.getElementById('pos').checked;
-	alert(prepost);
-	sessionStorage.setItem('prepostpositions', pre_postpositions);
+	sessionStorage.setItem('prepost', prepost);
 	window.location.href = ""
 }
