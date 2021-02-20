@@ -189,5 +189,5 @@ function sen_submit() {
 	//Pre/Postpositions
 	var prepost = document.getElementById('pos').checked;
 	sessionStorage.setItem('prepost', prepost);
-	window.location.href = ""
+	window.location.href = "lexicon.html"
 }
