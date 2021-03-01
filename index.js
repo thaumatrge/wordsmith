@@ -54,7 +54,7 @@ function ph() {
     }
 }
 
-function get(input, get_type, pushto, setto) {
+function get(input, get_type, pushto, set, setto) {
 	if (get_type == 1) {
 		var val = document.getElementById(input).value;
 		document.getElementById(input).value = "";
@@ -77,28 +77,23 @@ function get(input, get_type, pushto, setto) {
 		document.getElementById("main").appendChild(inp);
 		document.getElementById("main").appendChild(br);
 
-		sessionStorage.setItem(toString(pushto), setto);
+		sessionStorage.setItem(set, setto);
 	}
 }
 
-function submit() {
-}
-
-function pr() {
-	get('pr_input',1,pronouns,pronouns);
-}
-
-function pr_submit() {
-    var pr = sessionStorage.getItem('pronouns');
-    pr = pr.split(",");
-    for (var i = 1; i < pr.length; i++) {
-        var id = "arr_"+i;
-        var el = document.getElementById(id).value;
-        t_pronouns.push(el);
-        sessionStorage.setItem('t_pronouns', t_pronouns);
-    }
-    sessionStorage.setItem('t_pronouns', t_pronouns);
-    window.location.href = "conjugation.html";
+function submit(type, get, pushto, set, setto, go_to) {
+	if (type == 1) {
+		get = sessionStorage.getItem(get);
+		get = get.split(",");
+		for (var i = 1; i < get.length; i++) {
+			var id = "arr_" + i;
+			var el = document.getElementById(id).value;
+			pushto.push(el);
+			sessionStorage.setItem(set, setto);
+		}
+		sessionStorage.setItem(set, setto)
+		window.location.href = go_to;
+	}
 }
 
 function con() {
