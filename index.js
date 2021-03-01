@@ -56,7 +56,28 @@ function ph() {
 
 function get(val, input, type, pushto, setto) {
 	if (type == 1) {
+		val = document.getElementById(input).value;
+		document.getElementById(input).value = "";
 
+		var para = document.createElement("P");
+		var inp = document.createElement("INPUT");
+		var br = document.createElement("BR");
+
+		pushto.push(val);
+		id = "arr_" + get_unnused(pushto);
+
+		inp.type = "text";
+		inp.id = id;
+
+		para.style = "display: inline-block";
+		inp.style = "display: inline-block; border-top: none; border-left: none; border-right: none; font-family: 'IM FELL DW Pica'; border-radius: 0px; letter-spacing: 1px; font-size: 15px; position: relative; left: 1%";
+		para.innerText = val;
+
+		document.getElementById("main").appendChild(para);
+		document.getElementById("main").appendChild(inp);
+		document.getElementById("main").appendChild(br);
+
+		sessionStorage.setItem(toString(pushto), pushto);
 	}
 }
 
