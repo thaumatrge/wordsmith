@@ -10,7 +10,7 @@ var t_conjugations = [];
 
 var adjective_groups = [];
 
-if (darkmode == true) {}
+if (darkmode == true) {
 	document.getElementById('document').classList.add("dark");
 }else if (darkmode == false){
 	document.getElementById('document').classList.remove("dark");
@@ -54,9 +54,9 @@ function ph() {
     }
 }
 
-function get(val, input, type, pushto, setto) {
-	if (type == 1) {
-		val = document.getElementById(input).value;
+function get(input, get_type, pushto, setto) {
+	if (get_type == 1) {
+		var val = document.getElementById(input).value;
 		document.getElementById(input).value = "";
 
 		var para = document.createElement("P");
@@ -77,7 +77,7 @@ function get(val, input, type, pushto, setto) {
 		document.getElementById("main").appendChild(inp);
 		document.getElementById("main").appendChild(br);
 
-		sessionStorage.setItem(toString(pushto), pushto);
+		sessionStorage.setItem(toString(pushto), setto);
 	}
 }
 
@@ -85,29 +85,7 @@ function submit() {
 }
 
 function pr() {
-    var pr_val = document.getElementById('pr_input').value;
-    document.getElementById('pr_input').value = "";
-
-    var para = document.createElement("P");
-    var input = document.createElement("INPUT");
-    var br = document.createElement("BR");
-
-    pronouns.push(pr_val);
-    var id = "arr_" + get_unnused(pronouns);
-
-    input.type = "text";
-    input.id = id;
-
-    para.style = "display: inline-block";
-    input.style = "display: inline-block; border-top: none; border-left: none; border-right: none; font-family: 'IM FELL DW Pica'; border-radius: 0px; letter-spacing: 1px; font-size: 15px; position: relative; left: 1%";
-
-    para.innerHTML = pr_val;
-
-    document.getElementById("main").appendChild(para);
-    document.getElementById("main").appendChild(input);
-    document.getElementById("main").appendChild(br);
-
-    sessionStorage.setItem('pronouns', pronouns);
+	get('pr_input',1,pronouns,pronouns);
 }
 
 function pr_submit() {
