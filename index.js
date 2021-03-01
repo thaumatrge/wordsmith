@@ -10,7 +10,7 @@ var t_conjugations = [];
 
 var adjective_groups = [];
 
-if (darkmode == true) {
+if (darkmode == true) {}
 	document.getElementById('document').classList.add("dark");
 }else if (darkmode == false){
 	document.getElementById('document').classList.remove("dark");
@@ -19,7 +19,7 @@ if (darkmode == true) {
 function dark() {
 	var element = document.getElementById('document');
 	element.classList.toggle("dark");
-	let darkmode = true // here you need to explicitly declare the variable       
+	let darkmode = true;
 	sessionStorage.setItem('darkmode', JSON.stringify(darkmode));
 }
 
@@ -52,6 +52,15 @@ function ph() {
     else {
         alert('Please select a valid option.')
     }
+}
+
+function get(val, input, type, pushto, setto) {
+	if (type == 1) {
+
+	}
+}
+
+function submit() {
 }
 
 function pr() {
@@ -201,10 +210,13 @@ function adj() {
 	var para = document.createElement("P");
 	var input = document.createElement("INPUT");
 	var br = document.createElement("BR");
+
 	input.style = "display: inline-block; border-top: none; border-left: none; border-right: none; font-family: 'IM FELL DW Pica'; border-radius: 0px; letter-spacing: 1px; font-size: 15px; position: relative; left: 1%";
         para.style = "display: inline-block";
-	adjective_groups.push(con_val);
-	
+	adjective_groups.push(adj_val);
+	para.innerHTML = adj_val;
+	input.placeholder = "Adj. group rules";
+
 	document.getElementById('main').appendChild(para);
 	document.getElementById('main').appendChild(input);
 	document.getElementById('main').appendChild(br);
