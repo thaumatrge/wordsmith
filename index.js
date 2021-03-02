@@ -79,6 +79,47 @@ function get(input, get_type, pushto, set, setto) {
 
 		sessionStorage.setItem(set, setto);
 	}
+	else if (type == 2) {
+		get = sessionStorage.getItem(get);
+		get = get.split(",");
+
+		var val = document.getElementById(input);
+		document.getElementById(input).value = "";
+
+		var para = document.createElement("P");
+		var inp = document.createElement("INPUT");
+		var br = document.createElement("BR");
+		var t = document.createElement("P");
+
+		pushto.push(val);
+
+		t.style="font-family: 'IM FELL DW Pica'; letter-spacing: 1px; font-size: 18px; text-align: center";
+		t.innerHTML = val;
+
+		document.getElementById("main").appendChild(t);
+
+		for (var i = 0; i < get.length; i++) {
+			var para = document.createElement("P");
+			var br = document.createElement("BR");
+			var inp = document.createElement("INPUT");
+
+			inp.style = "display: inline-block; border-top: none; border-left: none; border-right: none; font-family: 'IM FELL DW Pica'; border-radius: 0px; letter-spacing: 1px; font-size: 15px; position: relative; left: 1%";
+			para.style = "display: inline-block";
+			para.innerHTML = get[i];
+
+			var id = "arr_" + i;
+
+			inp.type = "text";
+			inp.id = id;
+
+			document.getElementById("main").appendChild(para);
+			document.getElementById("main").appendChild(inp);
+			document.getElementById("main").appendChild(br);
+		}
+
+	sessionStorage.setItem(set, setto);
+
+	}
 }
 
 function submit(type, get, pushto, set, setto, go_to) {
@@ -94,48 +135,6 @@ function submit(type, get, pushto, set, setto, go_to) {
 		sessionStorage.setItem(set, setto)
 		window.location.href = go_to;
 	}
-}
-
-function con() {
-    var pronouns = sessionStorage.getItem('pronouns');
-    pronouns = pronouns.split(",");
-
-    conjugation = true;
-    var con_val = document.getElementById('con_input').value;
-    document.getElementById('con_input').value = "";
-
-    var para = document.createElement("P");
-    var input = document.createElement("INPUT");
-    var br = document.createElement("BR");
-    var t = document.createElement("P");
-
-    conjugation_groups.push(con_val);
-
-    t.style="font-family: 'IM FELL DW Pica'; letter-spacing: 1px; font-size: 18px; text-align: center";
-
-    t.innerHTML = con_val;
-
-    document.getElementById("main").appendChild(t);
-
-    for (var i = 0; i < pronouns.length; i++) {
-        var para = document.createElement("P");
-        var br = document.createElement("BR");
-        var input = document.createElement("INPUT");
-
-        input.style = "display: inline-block; border-top: none; border-left: none; border-right: none; font-family: 'IM FELL DW Pica'; border-radius: 0px; letter-spacing: 1px; font-size: 15px; position: relative; left: 1%";
-        para.style = "display: inline-block";
-        para.innerHTML = pronouns[i];
-
-        var id = "arr_" + i;
-
-        input.type = "text";
-        input.id = id;
-
-        document.getElementById("main").appendChild(para);
-        document.getElementById("main").appendChild(input);
-        document.getElementById("main").appendChild(br);
-    }
-    sessionStorage.setItem('conjugation_groups', conjugation_groups);
 }
 
 function con_submit() {
