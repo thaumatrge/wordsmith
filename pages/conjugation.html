@@ -3,28 +3,28 @@
 
 <head>
 	<script src="https://kit.fontawesome.com/04abc47f98.js" crossorigin="anonymous"></script>
-    <meta charset="UTF-8">
-    <title>Wordsmith</title>
-    <script src="index.js"></script>
-    <link rel="stylesheet" href="style.css">
-    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+	<meta charset="UTF-8">
+	<script src="../scripts/index.js"></script>
+	<link rel="stylesheet" href="../style.css"> 
+	<title>Wordsmith</title>
+	<meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
 </head>
 
 <body>
 	<i onclick="dark()" class="fas fa-moon"></i>
-    <h1 style="top: 10%">Conjugation</h1>
-    <p>Enter the names of groups of verbs in the box and click the + button to add it. Type the translations for the ends of verbs for each pronoun on the lines. If you don't want conjugation, click the x button then move on.</p>
-    <div>
-        <input id="con_input" type="text"></input>
-        <br>
-	<a style="font-size: 20px" onclick="get('con_input', 2, conjugation_groups,'conjugation_groups',conjugation_groups,'pronouns')">&#65122;</a>
-        <br>
-        <div id="main" style="white-space: nowrap">
-        </div>
-        <div class="bob-on-hover">
-            <a onclick="submit(2, 'conjugation_groups', t_conjugations, 't_conjugations', t_conjugations, "sentence.html", 'pronouns')">&#9758;</a>
-        </div>
-    </div>
+	<h1 style="top: 10%">Conjugation</h1>
+	<p>Enter the names of groups of verbs in the box and click the + button to add it. Type the translations for the ends of verbs for each pronoun on the lines. If you don't want conjugation, click the x button then move on.</p>
+	<div>
+		<input id="con_input" type="text"></input>
+		<br>
+		<a style="font-size: 20px" onclick="get('con_input', 2, conjugation_groups,'conjugation_groups',conjugation_groups,'pronouns')">&#65122;</a>
+		<br>
+		<div id="main" style="white-space: nowrap">
+		</div>
+		<div class="bob-on-hover">
+			<a onclick="submit(2, 'conjugation_groups', t_conjugations, 't_conjugations', t_conjugations, 'sentence.html', pronouns)">&#9758;</a>
+		</div>
+	</div>
 </body>
 
 </html>

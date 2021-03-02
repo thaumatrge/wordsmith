@@ -121,6 +121,7 @@ function get(input, get_type, pushto, set, setto, get) {
 }
 
 function submit(type, get, pushto, set, setto, go_to, get2) {
+	alert(pronouns)
 	if (type == 1) {
 		get = sessionStorage.getItem(get);
 		get = get.split(",");
@@ -133,19 +134,20 @@ function submit(type, get, pushto, set, setto, go_to, get2) {
 		sessionStorage.setItem(set, setto)
 	}
 	else if (type == 2) {
-	var one = sessionStorage.getItem(get);
-	var two = sessionStorage.getItem(get2);
-	one = one.split(",");
-	two = two.split(",");
-	for (var i = 0; i < one.length; i++) {
-		for (var j = 0; j < two.length; j++) {
-			var id = "arr_"+j;
-			var el = document.getElementById(id).value;
-			pushto.push(el);
-			sessionStorage.setItem(set, setto);
+		var one = sessionStorage.getItem(get);
+		var two = sessionStorage.getItem(get2);
+		one = one.split(",");
+		two = two.split(",");
+		for (var i = 0; i < one.length; i++) {
+			for (var j = 0; j < two.length; j++) {
+				var id = "arr_"+j;
+				var el = document.getElementById(id).value;
+				pushto.push(el);
+				sessionStorage.setItem(set, setto);
+			}
 		}
 	}
-	}
+	console.log('../pages/'+go_to);
 	window.location.href = "../pages/"+go_to;
 }
 
