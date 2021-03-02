@@ -37,17 +37,17 @@ function ph() {
     if (ph_val == 'ol') {
         sessionStorage.setItem("vowels", "'i', 'ĩ', 'iː', 'ĩː', 'y', 'ỹ', 'yː', 'ỹː', '', '', 'u', 'ũ', 'uː', 'ũː', '\n','e', 'ẽ', 'eː', 'ẽː', 'ø', 'ø̃ ', 'øː', 'ø̃ː', '', '', 'o', 'õ', 'oː', 'õː', '\n', 'ɛ', 'ɛ̃', 'ɛː', 'ɛ̃ː', 'œ', 'œ̃', '', 'a', 'ã', 'aː', 'ãː', 'ɔ', 'ɔ̃', 'ɔː', 'ɔ̃ː'");
         sessionStorage.setItem("consonants", "'i','iː','y','yː',',','u','uː','\n','e','eː','ø','øː','','','o','oː','\n','ɛ','ɛː','','','a','aː','',''");
-        window.location.href = "pronouns.html";
+        window.location.href = "../pages/pronouns.html";
     }
     else if (ph_val == 'en') {
         sessionStorage.setItem("vowels", "'ɪ','iː','ʊ','uː','','ɔː','\n','e','eə','ə','ɜː','ɒ','','\n','æ','','ʌ','','','ɑː','\n','eɪ','aɪ','ɔɪ','aʊ','əʊ','ɪə','ʊə','\n','(eɪə','aɪə','ɔɪə','aʊə','əʊə)'");
         sessionStorage.setItem("consonants", "'m','','n','','','ŋ','','\n','p','','t','tʃ','','k','','\n','b','','d','dʒ','','g','','\n','f','θ','s','ʃ','','x','h','\n','v','ð','z','ʒ','','','h','\n','','','l','r','j','w',''");
-        window.location.href = "pronouns.html";
+        window.location.href = "../pages/pronouns.html";
     }
     else if (ph_val == 'sp') {
         sessionStorage.setItem("vowels", "'i','','u','\n','e','','o','\n','','a',''");
         sessionStorage.setItem("consonants", "'m','','n','ɲ','','\n','p','b','t','d','','tʃ','ʝ','k','g','\n','f','b','θ','d','s','(ʃ)','ʝ','x','g','\n','','','l','ʎ','','\n','','','ɾ','','','\n','','','r','',''");
-        window.location.href = "pronouns.html";
+        window.location.href = "../pages/pronouns.html";
     }
     else {
         alert('Please select a valid option.')
@@ -116,13 +116,11 @@ function get(input, get_type, pushto, set, setto, get) {
 			document.getElementById("main").appendChild(inp);
 			document.getElementById("main").appendChild(br);
 		}
-
 	sessionStorage.setItem(set, setto);
-
 	}
 }
 
-function submit(type, get, pushto, set, setto, go_to) {
+function submit(type, get, pushto, set, setto, go_to, get2) {
 	if (type == 1) {
 		get = sessionStorage.getItem(get);
 		get = get.split(",");
@@ -133,24 +131,22 @@ function submit(type, get, pushto, set, setto, go_to) {
 			sessionStorage.setItem(set, setto);
 		}
 		sessionStorage.setItem(set, setto)
-		window.location.href = go_to;
 	}
-}
-
-function con_submit() {
-    var con = sessionStorage.getItem('conjugation_groups');
-    var pro = sessionStorage.getItem('pronouns');
-    pro = pro.split(",");
-    con = con.split(",");
-    for (var i = 0; i < con.length; i++) {
-        for (var j = 0; j < pro.length; j++) {
-            var id = "arr_"+j;
-            var el = document.getElementById(id).value;
-            t_conjugations.push(el);
-            sessionStorage.setItem('t_conjugations', t_conjugations);
-        }
-    }
-    window.location.href = "sentence.html";
+	else if (type == 2) {
+	var one = sessionStorage.getItem(get);
+	var two = sessionStorage.getItem(get2);
+	one = one.split(",");
+	two = two.split(",");
+	for (var i = 0; i < one.length; i++) {
+		for (var j = 0; j < two.length; j++) {
+			var id = "arr_"+j;
+			var el = document.getElementById(id).value;
+			pushto.push(el);
+			sessionStorage.setItem(set, setto);
+		}
+	}
+	}
+	window.location.href = "../pages/"+go_to;
 }
 
 function sen_submit() {
