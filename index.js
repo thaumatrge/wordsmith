@@ -54,7 +54,7 @@ function ph() {
     }
 }
 
-function get(input, get_type, pushto, set, setto) {
+function get(input, get_type, pushto, set, setto, get) {
 	if (get_type == 1) {
 		var val = document.getElementById(input).value;
 		document.getElementById(input).value = "";
@@ -79,11 +79,11 @@ function get(input, get_type, pushto, set, setto) {
 
 		sessionStorage.setItem(set, setto);
 	}
-	else if (type == 2) {
+	else if (get_type == 2) {
 		get = sessionStorage.getItem(get);
 		get = get.split(",");
 
-		var val = document.getElementById(input);
+		var val = document.getElementById(input).value;
 		document.getElementById(input).value = "";
 
 		var para = document.createElement("P");
